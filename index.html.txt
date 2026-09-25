@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cavalcante Contabilidade | Atividades de Contabilidade em Campo Grande - MS</title>
+    <meta name="description" content="Cavalcante Contabilidade S/S LTDA - Atividades de contabilidade, consultoria em gestão empresarial. Campo Grande, MS. CNPJ 14.650.498/0001-42. Ligue (67) 98409-3500.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --primary-light: #1e5a8a;
+            --accent: #e58e26;
+            --light-bg: #f8f9fa;
+            --dark-text: #1a1a2e;
+        }
+        * { font-family: 'Inter', sans-serif; }
+        body { color: var(--dark-text); }
+
+        /* Navbar */
+        .navbar { background-color: var(--primary); }
+        .navbar-brand { font-weight: 800; letter-spacing: -0.5px; }
+        .navbar-brand span { color: var(--accent); }
+        .nav-link { font-weight: 500; color: rgba(255,255,255,0.9) !important; }
+        .nav-link:hover { color: #fff !important; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #0c2d48 100%);
+            padding: 100px 0 80px;
+            color: #fff;
+        }
+        .hero h1 { font-weight: 800; font-size: 2.8rem; line-height: 1.2; }
+        .hero p { font-size: 1.15rem; opacity: 0.9; }
+        .badge-crc {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Icons circle */
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+        }
+        .icon-circle.primary { background: rgba(10,61,98,0.1); color: var(--primary); }
+        .icon-circle.accent { background: rgba(229,142,38,0.12); color: var(--accent); }
+
+        /* Service cards */
+        .card-service {
+            border: 1px solid #e9ecef;
+            border-radius: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            height: 100%;
+        }
+        .card-service:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+        .card-service .card-body { padding: 2rem; }
+
+        /* Stats */
+        .stat-number { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 0.9rem; color: #6c757d; font-weight: 500; }
+
+        /* Section titles */
+        .section-title { font-weight: 800; font-size: 2rem; }
+        .section-subtitle { color: #6c757d; max-width: 600px; margin: 0 auto; }
+
+        /* Map container */
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            height: 380px;
+        }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+        /* Contact info */
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+        }
+        .contact-item i { font-size: 1.5rem; color: var(--accent); }
+
+        /* Footer */
+        footer { background: var(--primary); color: rgba(255,255,255,0.8); }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        footer a:hover { color: #fff; }
+
+        /* Buttons */
+        .btn-accent {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 12px 32px;
+            border: none;
+        }
+        .btn-accent:hover { background: #d47d1f; color: #fff; }
+        .btn-outline-light-custom {
+            border: 2px solid rgba(255,255,255,0.6);
+            color: #fff;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 12px 32px;
+            background: transparent;
+        }
+        .btn-outline-light-custom:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: #fff; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 60px 0 50px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Cavalcante <span>Contabilidade</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link" href="#localizacao">Localização</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="badge-crc d-inline-block mb-4">
+                    <i class="bi bi-patch-check-fill me-2"></i>CRC: MS-000688/O
+                </span>
+                <h1 class="mb-4">Atividades de Contabilidade com <span style="color:var(--accent);">Confiança</span> e Precisão</h1>
+                <p class="mb-4">
+                    Desde 2011, a <strong>Cavalcante Contabilidade S/S LTDA</strong> oferece soluções contábeis completas 
+                    para empresas em Campo Grande — MS. Assessoria contábil, consultoria em gestão empresarial 
+                    e muito mais, sempre com atendimento personalizado.
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="https://wa.me/5567984093500" target="_blank" class="btn btn-accent">
+                        <i class="bi bi-whatsapp me-2"></i>Fale pelo WhatsApp
+                    </a>
+                    <a href="#localizacao" class="btn btn-outline-light-custom">
+                        <i class="bi bi-geo-alt me-2"></i>Como Chegar
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                <img src="https://placehold.co/500x400/0a3d62/ffffff?text=Cavalcante+Contabilidade&font=inter" 
+                     alt="Contabilidade profissional" class="img-fluid rounded-4 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+                <div class="stat-number">2011</div>
+                <div class="stat-label">Ano de Fundação</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-number">14+</div>
+                <div class="stat-label">Anos de Experiência</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Situação Cadastral Ativa</div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-number">MS</div>
+                <div class="stat-label">Sede em Campo Grande</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section class="py-5" id="sobre" style="background:var(--light-bg);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Sobre a Cavalcante Contabilidade</h2>
+            <p class="section-subtitle mt-2">Conheça a história e os valores por trás do nosso trabalho</p>
+        </div>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <img src="https://placehold.co/600x450/1e5a8a/ffffff?text=Nossa+Equipe&font=inter" 
+                     alt="Equipe Cavalcante Contabilidade" class="img-fluid rounded-4 shadow">
+            </div>
+            <div class="col-lg-6">
+                <h3 class="fw-bold mb-3">Uma empresa sólida, construída com dedicação</h3>
+                <p>
+                    A <strong>Cavalcante Contabilidade S/S LTDA</strong>, registrada sob o CNPJ 
+                    <strong>14.650.498/0001-42</strong>, foi fundada em <strong>25 de outubro de 2011</strong> 
+                    e desde então atua de forma ética e profissional no setor contábil.
+                </p>
+                <p>
+                    Sediada em Campo Grande, Mato Grosso do Sul, a empresa é uma 
+                    <strong>Sociedade Simples Limitada</strong> que tem como sócios-administradores 
+                    profissionais qualificados. Nossa atividade principal é 
+                    <strong>Atividades de Contabilidade</strong> (CNAE 69.20-6-01), 
+                    complementada por <strong>Consultoria em Gestão Empresarial</strong>.
+                </p>
+                <div class="row mt-4 g-3">
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                            <span class="fw-semibold">Situação: Ativa</span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-success fs-5"></i>
+                            <span class="fw-semibold">Opção pelo Simples</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVIÇOS / ATIVIDADES -->
+<section class="py-5 bg-white" id="servicos">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Atividades e Serviços</h2>
+            <p class="section-subtitle mt-2">Soluções contábeis e de gestão para a sua empresa</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service card border-0">
+                    <div class="card-body">
+                        <div class="icon-circle primary">
+                            <i class="bi bi-calculator"></i>
+                        </div>
+                        <h5 class="fw-bold">Atividades de Contabilidade</h5>
+                        <p class="text-muted mb-0">
+                            Serviços contábeis completos: escrituração, balanços, 
+                            demonstrações financeiras e obrigações acessórias com total precisão.
+                        </p>
+                        <small class="text-muted d-block mt-3">
+                            <strong>CNAE Principal:</strong> 69.20-6-01
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service card border-0">
+                    <div class="card-body">
+                        <div class="icon-circle accent">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h5 class="fw-bold">Consultoria em Gestão Empresarial</h5>
+                        <p class="text-muted mb-0">
+                            Assessoria estratégica para otimizar processos, 
+                            reduzir custos e impulsionar o crescimento sustentável do seu negócio.
+                        </p>
+                        <small class="text-muted d-block mt-3">
+                            <strong>CNAE Secundário:</strong> 70.20-4-00
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service card border-0">
+                    <div class="card-body">
+                        <div class="icon-circle primary">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h5 class="fw-bold">Assessoria Fiscal e Tributária</h5>
+                        <p class="text-muted mb-0">
+                            Planejamento tributário, apuração de impostos, 
+                            declarações e orientação completa para manter sua empresa em conformidade.
+                        </p>
+                        <small class="text-muted d-block mt-3">
+                            <strong>Simples Nacional:</strong> Optante
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service card border-0">
+                    <div class="card-body">
+                        <div class="icon-circle accent">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h5 class="fw-bold">Departamento Pessoal</h5>
+                        <p class="text-muted mb-0">
+                            Gestão de folha de pagamento, admissões, demissões, 
+                            férias, 13º salário e todas as rotinas trabalhistas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service card border-0">
+                    <div class="card-body">
+                        <div class="icon-circle primary">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h5 class="fw-bold">Planejamento Financeiro</h5>
+                        <p class="text-muted mb-0">
+                            Análise de fluxo de caixa, projeções financeiras 
+                            e suporte para tomada de decisões estratégicas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-service card border-0">
+                    <div class="card-body">
+                        <div class="icon-circle accent">
+                            <i class="bi bi-building"></i>
+                        </div>
+                        <h5 class="fw-bold">Abertura e Regularização</h5>
+                        <p class="text-muted mb-0">
+                            Constituição de empresas, alterações contratuais, 
+                            regularização de CNPJ e suporte em todas as etapas burocráticas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUADRO DE SÓCIOS -->
+<section class="py-5" style="background:var(--light-bg);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Quadro de Sócios e Administradores</h2>
+            <p class="section-subtitle mt-2">Profissionais à frente da Cavalcante Contabilidade</p>
+        </div>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-5">
+                <div class="card border-0 shadow-sm rounded-4 text-center p-4">
+                    <div class="mx-auto mb-3" style="width:80px;height:80px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                        <i class="bi bi-person-fill text-white" style="font-size:2.5rem;"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1">Juliana Barros de Freitas de Oliveira</h5>
+                    <span class="badge bg-primary rounded-pill px-3 py-2 mt-2">Sócio-Administrador</span>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card border-0 shadow-sm rounded-4 text-center p-4">
+                    <div class="mx-auto mb-3" style="width:80px;height:80px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                        <i class="bi bi-person-fill text-white" style="font-size:2.5rem;"></i>
+                    </div>
+                    <h5 class="fw-bold mb-1">Juracy Cavalcante de Barros</h5>
+                    <span class="badge bg-secondary rounded-pill px-3 py-2 mt-2">Sócio</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LOCALIZAÇÃO + MAPA -->
+<section class="py-5 bg-white" id="localizacao">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Nossa Localização</h2>
+            <p class="section-subtitle mt-2">Venha nos visitar em Campo Grande — MS</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="contact-item mb-3">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <div>
+                        <strong>Endereço</strong><br>
+                        Rua Jacarepaguá, 530<br>
+                        Jardim Flamboyant<br>
+                        Campo Grande — MS<br>
+                        CEP: 79041-061
+                    </div>
+                </div>
+                <div class="contact-item mb-3">
+                    <i class="bi bi-telephone-fill"></i>
+                    <div>
+                        <strong>Telefones</strong><br>
+                        (67) 3349-2359<br>
+                        (67) 98409-3500 <span class="badge bg-success">WhatsApp</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="bi bi-envelope-fill"></i>
+                    <div>
+                        <strong>E-mail</strong><br>
+                        barbara@acessoriaideialempressa.online
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="map-container">
+                    <!-- Google Maps embed - Campo Grande, MS - Rua Jacarepaguá, 530 -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.147!2d-54.5869!3d-20.4839!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDI5JzAyLjAiUyA1NMKwMzUnMTIuOCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização Cavalcante Contabilidade">
+                    </iframe>
+                </div>
+                <div class="text-end mt-2">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Rua+Jacarepagua+530+Jardim+Flamboyant+Campo+Grande+MS" 
+                       target="_blank" class="btn btn-sm btn-outline-primary rounded-pill">
+                        <i class="bi bi-box-arrow-up-right me-1"></i>Abrir no Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTATO / CTA -->
+<section class="py-5" id="contato" style="background: linear-gradient(135deg, var(--primary) 0%, #0c2d48 100%);">
+    <div class="container text-center text-white">
+        <h2 class="fw-bold mb-3">Precisa de assessoria contábil?</h2>
+        <p class="mb-4 mx-auto" style="max-width:600px; opacity:0.9;">
+            Entre em contato conosco e descubra como podemos ajudar sua empresa a crescer 
+            com segurança e conformidade. Atendimento personalizado para cada cliente.
+        </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="https://wa.me/5567984093500" target="_blank" class="btn btn-accent">
+                <i class="bi bi-whatsapp me-2"></i>Chamar no WhatsApp
+            </a>
+            <a href="mailto:barbara@acessoriaideialempressa.online" class="btn btn-outline-light-custom">
+                <i class="bi bi-envelope me-2"></i>Enviar E-mail
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="pt-5 pb-3">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <h5 class="fw-bold text-white mb-3">Cavalcante Contabilidade</h5>
+                <p class="small">
+                    Sociedade Simples Limitada com situação cadastral ativa desde 2011. 
+                    Oferecendo serviços contábeis de excelência em Campo Grande — MS.
+                </p>
+                <p class="small mb-0">
+                    <strong>CNPJ:</strong> 14.650.498/0001-42<br>
+                    <strong>CRC:</strong> MS-000688/O
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="fw-bold text-white mb-3">Links Rápidos</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="#inicio">Início</a></li>
+                    <li class="mb-2"><a href="#sobre">Sobre Nós</a></li>
+                    <li class="mb-2"><a href="#servicos">Serviços</a></li>
+                    <li class="mb-2"><a href="#localizacao">Localização</a></li>
+                    <li class="mb-2"><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h5 class="fw-bold text-white mb-3">Contato</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-2">
+                        <i class="bi bi-telephone me-2"></i>(67) 3349-2359
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-whatsapp me-2"></i>(67) 98409-3500
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-envelope me-2"></i>barbara@acessoriaideialempressa.online
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-geo-alt me-2"></i>Rua Jacarepaguá, 530 — Jardim Flamboyant
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary my-4">
+        <div class="text-center small">
+            <p class="mb-0">
+                &copy; 2026 Cavalcante Contabilidade S/S LTDA. Todos os direitos reservados. | 
+                Natureza Jurídica: Sociedade Simples Limitada | 
+                Opção pelo Simples: Sim
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
